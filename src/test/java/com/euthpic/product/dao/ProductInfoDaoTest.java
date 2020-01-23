@@ -16,6 +16,6 @@ class ProductInfoDaoTest {
     @Test
     void findByProductStatus() {
      List<ProductInfo> productInfoList= productInfoDao.findByProductStatus(1);
-        System.out.println(productInfoList.size());
+
     }
 }

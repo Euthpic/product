@@ -5,6 +5,7 @@ import java.util.Date;
 import lombok.Data;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 /**
@@ -15,6 +16,7 @@ import javax.persistence.Id;
 @Entity
 public class ProductCategory implements Serializable {
    @Id
+   @GeneratedValue
     private Integer categoryId;
 
     /**
