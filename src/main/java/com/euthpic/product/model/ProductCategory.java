@@ -32,12 +32,12 @@ public class ProductCategory implements Serializable {
     /**
      * 创建时间
      */
-    private Date createTime;
-
-    /**
-     * 修改时间
-     */
-    private Date updateTime;
+//    private Date createTime;
+//
+//    /**
+//     * 修改时间
+//     */
+//    private Date updateTime;
 
     private static final long serialVersionUID = 1L;
 }
