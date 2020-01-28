@@ -1,5 +1,6 @@
 package com.euthpic.product.dao;
 
+import com.euthpic.product.common.ProductInfoOutput;
 import com.euthpic.product.server.dao.ProductInfoDao;
 import com.euthpic.product.server.model.ProductInfo;
 import org.junit.jupiter.api.Test;
@@ -22,8 +23,5 @@ class ProductInfoDaoTest {
 
     @Test
     void findByProductIdIn() {
-        List<ProductInfo> productInfoList= productInfoDao.findByProductIdIn(
-                Arrays.asList("157875196366160022","157875227953464068"));
-        System.out.println(productInfoList.toString());
     }
 }

@@ -9,10 +9,12 @@ import com.euthpic.product.server.model.ProductInfo;
 import com.euthpic.product.server.service.ProductService;
 import com.euthpic.product.server.dao.ProductInfoDao;
 import com.euthpic.product.server.enums.ProductStatusEnum;
+import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class ProductServiceImpl implements ProductService {
@@ -29,7 +31,13 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public List<ProductInfoOutput> findList(List<String> productIdList) {
-        return productInfoDao.findByProductIdIn(productIdList);
+        return productInfoDao.findByProductIdIn(productIdList).stream()
+                .map(e -> {
+                    ProductInfoOutput output = new ProductInfoOutput();
+                    BeanUtils.copyProperties(e, output);
+                    return output;
+                })
+                .collect(Collectors.toList());
     }
 
     @Override
